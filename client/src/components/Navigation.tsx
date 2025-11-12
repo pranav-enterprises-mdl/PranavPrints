@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Menu, X, Phone } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import logo from '@assets/ChatGPT Image Nov 12, 2025, 02_50_01 PM_1762939224069.png';
 
 export function Navigation() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -40,10 +41,17 @@ export function Navigation() {
           {/* Logo */}
           <button
             onClick={() => scrollToSection('hero')}
-            className="text-2xl md:text-3xl font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent hover-elevate active-elevate-2"
+            className="flex items-center gap-3 hover-elevate active-elevate-2 group"
             data-testid="link-home"
           >
-            Pranav Enterprises
+            <img 
+              src={logo} 
+              alt="Pranav Enterprises Logo" 
+              className="h-12 md:h-14 w-auto transition-transform duration-300 group-hover:scale-105"
+            />
+            <span className="text-xl md:text-2xl font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent hidden sm:inline">
+              Pranav Enterprises
+            </span>
           </button>
 
           {/* Desktop Navigation */}
