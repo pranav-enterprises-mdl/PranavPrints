@@ -70,6 +70,13 @@ export function Navigation() {
               Portfolio
             </button>
             <button
+              onClick={() => scrollToSection('upload')}
+              className="text-base font-medium text-foreground/80 hover:text-primary transition-colors"
+              data-testid="link-upload"
+            >
+              Upload
+            </button>
+            <button
               onClick={() => scrollToSection('about')}
               className="text-base font-medium text-foreground/80 hover:text-primary transition-colors"
               data-testid="link-about"
@@ -133,6 +140,13 @@ export function Navigation() {
               data-testid="link-portfolio-mobile"
             >
               Portfolio
+            </button>
+            <button
+              onClick={() => scrollToSection('upload')}
+              className="block w-full text-left py-3 px-4 rounded-lg hover-elevate active-elevate-2 text-base font-medium"
+              data-testid="link-upload-mobile"
+            >
+              Upload
             </button>
             <button
               onClick={() => scrollToSection('about')}

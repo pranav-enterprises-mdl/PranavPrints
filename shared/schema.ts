@@ -68,3 +68,34 @@ export const insertTestimonialSchema = createInsertSchema(testimonials).omit({
 
 export type InsertTestimonial = z.infer<typeof insertTestimonialSchema>;
 export type Testimonial = typeof testimonials.$inferSelect;
+
+// File uploads for customer design submissions
+export const fileUploads = pgTable("file_uploads", {
+  id: varchar("id").primaryKey().default(sql`gen_random_uuid()`),
+  customerName: text("customer_name").notNull(),
+  customerEmail: text("customer_email").notNull(),
+  customerPhone: text("customer_phone").notNull(),
+  serviceType: text("service_type").notNull(),
+  fileName: text("file_name").notNull(),
+  fileSize: varchar("file_size").notNull(), // Store as string (e.g., "2.5 MB")
+  fileType: text("file_type").notNull(), // MIME type
+  notes: text("notes"),
+  uploadedAt: timestamp("uploaded_at").defaultNow().notNull(),
+});
+
+export const insertFileUploadSchema = createInsertSchema(fileUploads).omit({
+  id: true,
+  uploadedAt: true,
+}).extend({
+  customerName: z.string().min(2, "Name must be at least 2 characters"),
+  customerEmail: z.string().email("Please enter a valid email"),
+  customerPhone: z.string().min(10, "Please enter a valid phone number"),
+  serviceType: z.string().min(1, "Please select a service type"),
+  fileName: z.string().min(1, "File name is required"),
+  fileSize: z.string().min(1, "File size is required"),
+  fileType: z.string().min(1, "File type is required"),
+  notes: z.string().optional(),
+});
+
+export type InsertFileUpload = z.infer<typeof insertFileUploadSchema>;
+export type FileUpload = typeof fileUploads.$inferSelect;
