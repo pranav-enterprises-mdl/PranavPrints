@@ -266,14 +266,14 @@ export function ContactSection() {
             <Card className="overflow-hidden">
               <CardContent className="p-0">
                 <iframe
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3841.8472!2d75.8875!3d16.3368!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTbCsDIwJzEyLjUiTiA3NcKwNTMnMTUuMCJF!5e0!3m2!1sen!2sin!4v1234567890"
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d243.52651667890!2d75.2905277!3d16.3260266!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc74192cbbe0859%3A0x743a60a69ee1be6e!2sPranav%20Printing%20Press!5e0!3m2!1sen!2sin!4v1699876543210!5m2!1sen!2sin"
                   width="100%"
                   height="250"
                   style={{ border: 0 }}
                   allowFullScreen
                   loading="lazy"
                   referrerPolicy="no-referrer-when-downgrade"
-                  title="Pranav Enterprises Location"
+                  title="Pranav Enterprises - Mudhol, Karnataka"
                   data-testid="map-location"
                 />
               </CardContent>
