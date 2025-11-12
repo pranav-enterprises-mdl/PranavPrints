@@ -33,7 +33,7 @@ export function Navigation() {
   return (
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled ? 'bg-background/95 backdrop-blur-md shadow-md' : 'bg-transparent'
+        isScrolled ? 'bg-background/95 backdrop-blur-xl shadow-xl border-b border-border/50' : 'bg-transparent'
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 md:px-6">
@@ -41,15 +41,15 @@ export function Navigation() {
           {/* Logo */}
           <button
             onClick={() => scrollToSection('hero')}
-            className="flex items-center gap-3 hover-elevate active-elevate-2 group"
+            className="flex items-center gap-3 hover-elevate active-elevate-2 group rounded-xl p-2 -m-2"
             data-testid="link-home"
           >
             <img 
               src={logo} 
               alt="Pranav Enterprises Logo" 
-              className="h-12 md:h-14 w-auto transition-transform duration-300 group-hover:scale-105"
+              className="h-12 md:h-14 w-auto transition-all duration-300 group-hover:scale-110 group-hover:rotate-3 drop-shadow-lg"
             />
-            <span className="text-xl md:text-2xl font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent hidden sm:inline">
+            <span className="text-xl md:text-2xl font-bold gradient-text hidden sm:inline">
               Pranav Enterprises
             </span>
           </button>
@@ -58,42 +58,42 @@ export function Navigation() {
           <div className="hidden md:flex items-center gap-8">
             <button
               onClick={() => scrollToSection('services')}
-              className="text-base font-medium text-foreground/80 hover:text-primary transition-colors"
+              className="text-base font-medium text-foreground/80 hover:text-primary transition-all duration-200 hover:scale-105 px-2 py-1 rounded-lg hover-elevate relative after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-full after:h-0.5 after:bg-primary after:scale-x-0 hover:after:scale-x-100 after:transition-transform after:duration-200 after:origin-left"
               data-testid="link-services"
             >
               Services
             </button>
             <button
               onClick={() => scrollToSection('quote-calculator')}
-              className="text-base font-medium text-foreground/80 hover:text-primary transition-colors"
+              className="text-base font-medium text-foreground/80 hover:text-primary transition-all duration-200 hover:scale-105 px-2 py-1 rounded-lg hover-elevate relative after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-full after:h-0.5 after:bg-primary after:scale-x-0 hover:after:scale-x-100 after:transition-transform after:duration-200 after:origin-left"
               data-testid="link-quote"
             >
               Quote
             </button>
             <button
               onClick={() => scrollToSection('portfolio')}
-              className="text-base font-medium text-foreground/80 hover:text-primary transition-colors"
+              className="text-base font-medium text-foreground/80 hover:text-primary transition-all duration-200 hover:scale-105 px-2 py-1 rounded-lg hover-elevate relative after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-full after:h-0.5 after:bg-primary after:scale-x-0 hover:after:scale-x-100 after:transition-transform after:duration-200 after:origin-left"
               data-testid="link-portfolio"
             >
               Portfolio
             </button>
             <button
               onClick={() => scrollToSection('upload')}
-              className="text-base font-medium text-foreground/80 hover:text-primary transition-colors"
+              className="text-base font-medium text-foreground/80 hover:text-primary transition-all duration-200 hover:scale-105 px-2 py-1 rounded-lg hover-elevate relative after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-full after:h-0.5 after:bg-primary after:scale-x-0 hover:after:scale-x-100 after:transition-transform after:duration-200 after:origin-left"
               data-testid="link-upload"
             >
               Upload
             </button>
             <button
               onClick={() => scrollToSection('about')}
-              className="text-base font-medium text-foreground/80 hover:text-primary transition-colors"
+              className="text-base font-medium text-foreground/80 hover:text-primary transition-all duration-200 hover:scale-105 px-2 py-1 rounded-lg hover-elevate relative after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-full after:h-0.5 after:bg-primary after:scale-x-0 hover:after:scale-x-100 after:transition-transform after:duration-200 after:origin-left"
               data-testid="link-about"
             >
               About
             </button>
             <button
               onClick={() => scrollToSection('contact')}
-              className="text-base font-medium text-foreground/80 hover:text-primary transition-colors"
+              className="text-base font-medium text-foreground/80 hover:text-primary transition-all duration-200 hover:scale-105 px-2 py-1 rounded-lg hover-elevate relative after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-full after:h-0.5 after:bg-primary after:scale-x-0 hover:after:scale-x-100 after:transition-transform after:duration-200 after:origin-left"
               data-testid="link-contact"
             >
               Contact
@@ -101,7 +101,7 @@ export function Navigation() {
             <Button
               variant="default"
               onClick={() => scrollToSection('quote-calculator')}
-              className="bg-primary"
+              className="bg-primary shadow-lg shadow-primary/30 hover:scale-105 transition-transform duration-200"
               data-testid="button-get-quote"
             >
               <Phone className="w-4 h-4 mr-2" />

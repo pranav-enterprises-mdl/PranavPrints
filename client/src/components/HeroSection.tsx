@@ -28,26 +28,30 @@ export function HeroSection() {
         <img
           src={heroImage}
           alt="Modern printing press"
-          className="w-full h-full object-cover"
+          className="w-full h-full object-cover scale-105 animate-float"
         />
         <div className="absolute inset-0 bg-gradient-to-br from-background/95 via-background/85 to-background/70" />
+        
+        {/* Animated CMYK gradient accents */}
+        <div className="absolute top-20 left-10 w-96 h-96 bg-gradient-to-br from-primary/20 to-transparent rounded-full blur-3xl animate-pulse" />
+        <div className="absolute bottom-20 right-10 w-96 h-96 bg-gradient-to-tl from-accent/20 to-transparent rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }} />
       </div>
 
       {/* Content */}
       <div className="relative z-10 max-w-7xl mx-auto px-4 md:px-6 py-32 text-center">
         <div className="max-w-4xl mx-auto space-y-8">
           {/* Badge */}
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/20 backdrop-blur-sm">
-            <div className="w-2 h-2 rounded-full bg-primary animate-pulse" />
-            <span className="text-sm font-medium text-primary">
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass-effect shadow-lg shadow-primary/10 hover-elevate">
+            <div className="w-2 h-2 rounded-full bg-primary animate-pulse shadow-glow" />
+            <span className="text-sm font-semibold text-primary uppercase tracking-wide">
               Premium Printing Services in Mudhol
             </span>
           </div>
 
           {/* Headline */}
-          <h1 className="text-5xl md:text-7xl font-bold leading-tight">
+          <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold leading-tight tracking-tight">
             Transform Your Ideas Into{' '}
-            <span className="bg-gradient-to-r from-primary via-accent to-primary bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-primary via-accent to-primary bg-clip-text text-transparent animate-gradient">
               Stunning Prints
             </span>
           </h1>
@@ -63,14 +67,14 @@ export function HeroSection() {
             <WhatsAppButton
               size="lg"
               text="Chat on WhatsApp"
-              className="shadow-lg shadow-primary/20 bg-[#25D366] hover:bg-[#20BA5A] border-[#25D366]"
+              className="shadow-xl shadow-[#25D366]/30 bg-[#25D366] hover:bg-[#20BA5A] border-[#25D366] hover:scale-105 transition-transform duration-200"
               prefilledMessage="Hi! I'm interested in getting a quote for printing services."
               testId="button-hero-whatsapp"
             />
             <Button
               size="lg"
               onClick={() => scrollToSection('contact')}
-              className="bg-primary shadow-lg shadow-primary/20"
+              className="bg-primary shadow-xl shadow-primary/30 hover:scale-105 transition-transform duration-200"
               data-testid="button-hero-quote"
             >
               <Phone className="w-5 h-5 mr-2" />
@@ -80,7 +84,7 @@ export function HeroSection() {
               size="lg"
               variant="outline"
               onClick={() => scrollToSection('portfolio')}
-              className="backdrop-blur-md bg-background/50 border-2"
+              className="glass-effect border-2 shadow-lg hover:scale-105 transition-transform duration-200"
               data-testid="button-hero-portfolio"
             >
               View Portfolio
@@ -89,22 +93,22 @@ export function HeroSection() {
           </div>
 
           {/* Trust Indicators */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 pt-12 max-w-3xl mx-auto">
-            <div className="text-center">
-              <div className="text-3xl md:text-4xl font-bold text-primary">10+</div>
-              <div className="text-sm text-muted-foreground mt-1">Years Experience</div>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 pt-12 max-w-4xl mx-auto">
+            <div className="glass-effect rounded-xl p-6 shadow-lg hover-elevate transition-all duration-300">
+              <div className="text-3xl md:text-4xl font-bold gradient-text">10+</div>
+              <div className="text-sm text-muted-foreground mt-2 font-medium">Years Experience</div>
             </div>
-            <div className="text-center">
-              <div className="text-3xl md:text-4xl font-bold text-primary">5000+</div>
-              <div className="text-sm text-muted-foreground mt-1">Projects Done</div>
+            <div className="glass-effect rounded-xl p-6 shadow-lg hover-elevate transition-all duration-300">
+              <div className="text-3xl md:text-4xl font-bold gradient-text">5000+</div>
+              <div className="text-sm text-muted-foreground mt-2 font-medium">Projects Done</div>
             </div>
-            <div className="text-center">
-              <div className="text-3xl md:text-4xl font-bold text-primary">100%</div>
-              <div className="text-sm text-muted-foreground mt-1">Client Satisfaction</div>
+            <div className="glass-effect rounded-xl p-6 shadow-lg hover-elevate transition-all duration-300">
+              <div className="text-3xl md:text-4xl font-bold gradient-text">100%</div>
+              <div className="text-sm text-muted-foreground mt-2 font-medium">Client Satisfaction</div>
             </div>
-            <div className="text-center">
-              <div className="text-3xl md:text-4xl font-bold text-primary">24hr</div>
-              <div className="text-sm text-muted-foreground mt-1">Fast Turnaround</div>
+            <div className="glass-effect rounded-xl p-6 shadow-lg hover-elevate transition-all duration-300">
+              <div className="text-3xl md:text-4xl font-bold gradient-text">24hr</div>
+              <div className="text-sm text-muted-foreground mt-2 font-medium">Fast Turnaround</div>
             </div>
           </div>
         </div>

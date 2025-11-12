@@ -78,13 +78,13 @@ export function TestimonialsSection() {
       <div className="max-w-7xl mx-auto px-4 md:px-6">
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-accent/10 border border-accent/20 mb-6">
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass-effect shadow-lg shadow-accent/10 hover-elevate mb-6">
             <Quote className="w-4 h-4 text-accent" />
-            <span className="text-sm font-medium text-accent uppercase tracking-wide">
+            <span className="text-sm font-semibold text-accent uppercase tracking-wide">
               Customer Reviews
             </span>
           </div>
-          <h2 className="text-4xl md:text-5xl font-bold mb-6">
+          <h2 className="text-4xl md:text-5xl font-bold mb-6 gradient-text">
             What Our Customers Say
           </h2>
           <p className="text-lg text-muted-foreground leading-relaxed">
@@ -97,13 +97,13 @@ export function TestimonialsSection() {
           {testimonialsData.map((testimonial, index) => (
             <Card
               key={index}
-              className="relative hover-elevate transition-all duration-300"
+              className="relative hover-elevate transition-all duration-300 shadow-lg hover:shadow-xl border-2 group"
               data-testid={`card-testimonial-${index}`}
             >
               <CardContent className="pt-6 pb-6 px-6 space-y-4">
                 {/* Quote Icon */}
                 <div className="flex items-start justify-between">
-                  <div className="w-10 h-10 rounded-full bg-accent/10 flex items-center justify-center flex-shrink-0">
+                  <div className="w-10 h-10 rounded-full bg-gradient-to-br from-accent/20 to-accent/5 flex items-center justify-center flex-shrink-0 shadow-md group-hover:shadow-glow-accent transition-shadow">
                     <Quote className="w-5 h-5 text-accent" />
                   </div>
                   {/* Rating */}

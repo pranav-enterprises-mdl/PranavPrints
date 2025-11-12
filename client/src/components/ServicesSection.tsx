@@ -43,13 +43,13 @@ export function ServicesSection() {
       <div className="max-w-7xl mx-auto px-4 md:px-6">
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/20 mb-6">
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass-effect shadow-lg shadow-primary/10 hover-elevate mb-6">
             <Activity className="w-4 h-4 text-primary" />
-            <span className="text-sm font-medium text-primary uppercase tracking-wide">
+            <span className="text-sm font-semibold text-primary uppercase tracking-wide">
               Our Services
             </span>
           </div>
-          <h2 className="text-4xl md:text-5xl font-bold mb-6">
+          <h2 className="text-4xl md:text-5xl font-bold mb-6 gradient-text">
             Professional Printing Solutions
           </h2>
           <p className="text-lg text-muted-foreground leading-relaxed">
@@ -62,7 +62,7 @@ export function ServicesSection() {
           {services.map((service, index) => (
             <Card
               key={index}
-              className="group hover-elevate overflow-hidden border-2 transition-all duration-300"
+              className="group hover-elevate overflow-hidden border-2 transition-all duration-300 shadow-lg hover:shadow-2xl hover:scale-[1.02]"
               data-testid={`card-service-${index}`}
             >
               {/* Service Image */}
@@ -84,11 +84,11 @@ export function ServicesSection() {
 
               <CardHeader className="space-y-4">
                 <div className="flex items-center gap-4">
-                  <div className="p-3 rounded-lg bg-primary/10">
+                  <div className={`p-3 rounded-xl ${index === 0 ? 'bg-gradient-to-br from-primary/20 to-primary/5' : 'bg-gradient-to-br from-accent/20 to-accent/5'} shadow-lg`}>
                     {service.icon}
                   </div>
                   <div className="flex-1">
-                    <CardTitle className="text-2xl md:text-3xl">{service.title}</CardTitle>
+                    <CardTitle className="text-2xl md:text-3xl group-hover:gradient-text transition-all">{service.title}</CardTitle>
                   </div>
                 </div>
                 <CardDescription className="text-base leading-relaxed">
