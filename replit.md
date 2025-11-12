@@ -5,11 +5,18 @@
 Pranav Enterprises is a modern, responsive website for a premium printing business based in Mudhol, Karnataka. The site showcases offset digital and flex printing services, features a portfolio gallery, and includes a contact form for customer inquiries. Built as a single-page application with smooth scrolling navigation, it emphasizes visual impact and mobile-first design principles.
 
 **Status**: ✅ Complete and production-ready (November 12, 2025)
-- All sections implemented and tested (Navigation, Hero, Services, Portfolio, About, Contact, Footer)
-- Contact form connected to PostgreSQL database with proper validation
+- All Phase 1 sections implemented and tested (Navigation, Hero, Services, Portfolio, About, Contact, Footer)
+- **Phase 2 Features Complete:**
+  - ✅ Quote Calculator: Real-time pricing estimates with material selection and quantity inputs
+  - ✅ Customer Testimonials: Carousel-based testimonial section with 5-star ratings
+  - ✅ Service Detail Pages: Dedicated pages for Offset Digital and Flex Printing with technical specs, pricing tiers, workflow diagrams
+  - ✅ File Upload Portal: Customer design submission portal with drag-and-drop, file validation (PDF/JPG/PNG/AI/ZIP, max 50MB), metadata storage
+  - ✅ WhatsApp Integration: Multiple WhatsApp click-to-chat touchpoints (hero CTA, contact section, footer, floating button) for instant customer communication
+- Contact form and file uploads connected to PostgreSQL database with proper validation
 - End-to-end testing verified all functionality
 - CMYK-inspired vibrant design system with cyan/magenta color palette
 - Instagram integration: https://www.instagram.com/pranaventerprisesmdl/
+- WhatsApp Business: wa.me/919740007147 (multiple entry points throughout site)
 - Contact details: Phone 9740007147, Mudhol, Bagalkote, Karnataka
 
 ## User Preferences
@@ -33,13 +40,15 @@ Preferred communication style: Simple, everyday language.
 - Custom design system defined in `design_guidelines.md` emphasizing bold typography, vibrant gradients, and high-contrast layouts
 
 **Component Structure**
-- Page-level components: `Home.tsx` (main landing page), `NotFound.tsx`
-- Feature sections: `HeroSection`, `ServicesSection`, `PortfolioSection`, `AboutSection`, `ContactSection`, `Navigation`, `Footer`
+- Page-level components: `Home.tsx` (main landing page), `ServiceDetailPage.tsx` (service-specific pages), `NotFound.tsx`
+- Feature sections: `HeroSection`, `ServicesSection`, `QuoteCalculator`, `PortfolioSection`, `TestimonialsSection`, `AboutSection`, `FileUploadPortal`, `ContactSection`, `Navigation`, `Footer`
+- Reusable components: `WhatsAppButton`, `FloatingWhatsAppButton`
 - All sections designed for smooth scrolling navigation within single-page layout
+- Service detail pages use dynamic routing: `/services/:serviceId` (offset-digital, flex-printing)
 
 **State Management Strategy**
-- React Query for server state (contact form submissions)
-- Local component state (useState) for UI interactions (mobile menu, form inputs, image modals)
+- React Query for server state (contact form submissions, file upload submissions, quote calculations)
+- Local component state (useState) for UI interactions (mobile menu, form inputs, image modals, file selection, carousel navigation)
 - No global state management library needed due to simple application scope
 
 ### Backend Architecture
@@ -51,11 +60,15 @@ Preferred communication style: Simple, everyday language.
 - Development/production environment separation via NODE_ENV
 
 **API Design**
-- RESTful endpoint: `POST /api/contact` for contact form submissions
+- RESTful endpoints:
+  - `POST /api/contact`: Contact form submissions
+  - `POST /api/file-uploads`: File upload metadata submissions (actual files not stored, only metadata for demo)
+  - `POST /api/quotes/calculate`: Real-time quote price calculations
 - Zod schema validation with human-readable error messages via `zod-validation-error`
 - Consistent error responses with appropriate HTTP status codes
 - Storage layer abstraction through `IStorage` interface pattern
-- Contact submissions securely stored in PostgreSQL (no public read endpoints for privacy)
+- Contact and file upload submissions securely stored in PostgreSQL (no public read endpoints for privacy)
+- Quote calculations performed server-side with business logic for different service types and materials
 
 **Development Setup**
 - **tsx** for running TypeScript directly in development
@@ -73,8 +86,10 @@ Preferred communication style: Simple, everyday language.
 **Schema Design**
 - `users` table: Basic user authentication structure (id, username, password)
 - `contact_submissions` table: Stores customer inquiries with fields for name, phone, email, service type, and message
+- `file_uploads` table: Stores file upload metadata with customer info, service type, file details (name, size, type), and notes
 - Schema defined in `shared/schema.ts` using Drizzle's PostgreSQL table builders
 - Zod schemas derived from Drizzle schemas for runtime validation consistency
+- Insert schemas with validation rules (email format, phone length, file size limits, etc.)
 
 **Migration Strategy**
 - Drizzle Kit configured for schema migrations in `./migrations` directory
