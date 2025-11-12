@@ -5,6 +5,7 @@ import { QuoteCalculator } from '@/components/QuoteCalculator';
 import { PortfolioSection } from '@/components/PortfolioSection';
 import { TestimonialsSection } from '@/components/TestimonialsSection';
 import { AboutSection } from '@/components/AboutSection';
+import { FileUploadPortal } from '@/components/FileUploadPortal';
 import { ContactSection } from '@/components/ContactSection';
 import { Footer } from '@/components/Footer';
 
@@ -19,6 +20,7 @@ export default function Home() {
         <PortfolioSection />
         <TestimonialsSection />
         <AboutSection />
+        <FileUploadPortal />
         <ContactSection />
       </main>
       <Footer />

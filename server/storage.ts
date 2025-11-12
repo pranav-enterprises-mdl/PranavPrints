@@ -1,4 +1,4 @@
-import { users, contactSubmissions, type User, type InsertUser, type ContactSubmission, type InsertContactSubmission } from "@shared/schema";
+import { users, contactSubmissions, fileUploads, type User, type InsertUser, type ContactSubmission, type InsertContactSubmission, type FileUpload, type InsertFileUpload } from "@shared/schema";
 import { db } from "./db";
 import { eq, desc } from "drizzle-orm";
 
@@ -8,6 +8,7 @@ export interface IStorage {
   createUser(user: InsertUser): Promise<User>;
   
   createContactSubmission(submission: InsertContactSubmission): Promise<ContactSubmission>;
+  createFileUpload(upload: InsertFileUpload): Promise<FileUpload>;
 }
 
 export class DatabaseStorage implements IStorage {
@@ -35,6 +36,14 @@ export class DatabaseStorage implements IStorage {
       .values(insertSubmission)
       .returning();
     return submission;
+  }
+
+  async createFileUpload(insertUpload: InsertFileUpload): Promise<FileUpload> {
+    const [upload] = await db
+      .insert(fileUploads)
+      .values(insertUpload)
+      .returning();
+    return upload;
   }
 }
 
