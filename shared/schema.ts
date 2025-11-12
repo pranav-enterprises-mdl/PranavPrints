@@ -41,3 +41,30 @@ export const insertContactSubmissionSchema = createInsertSchema(contactSubmissio
 
 export type InsertContactSubmission = z.infer<typeof insertContactSubmissionSchema>;
 export type ContactSubmission = typeof contactSubmissions.$inferSelect;
+
+// Customer testimonials
+export const testimonials = pgTable("testimonials", {
+  id: varchar("id").primaryKey().default(sql`gen_random_uuid()`),
+  customerName: text("customer_name").notNull(),
+  customerRole: text("customer_role").notNull(),
+  companyName: text("company_name"),
+  rating: varchar("rating", { length: 1 }).notNull(), // 1-5
+  testimonialText: text("testimonial_text").notNull(),
+  serviceUsed: text("service_used").notNull(),
+  createdAt: timestamp("created_at").defaultNow().notNull(),
+});
+
+export const insertTestimonialSchema = createInsertSchema(testimonials).omit({
+  id: true,
+  createdAt: true,
+}).extend({
+  customerName: z.string().min(2, "Customer name must be at least 2 characters"),
+  customerRole: z.string().min(2, "Role must be at least 2 characters"),
+  companyName: z.string().optional(),
+  rating: z.enum(["1", "2", "3", "4", "5"]),
+  testimonialText: z.string().min(10, "Testimonial must be at least 10 characters"),
+  serviceUsed: z.string().min(2, "Service must be specified"),
+});
+
+export type InsertTestimonial = z.infer<typeof insertTestimonialSchema>;
+export type Testimonial = typeof testimonials.$inferSelect;

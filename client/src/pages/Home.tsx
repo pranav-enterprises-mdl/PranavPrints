@@ -3,6 +3,7 @@ import { HeroSection } from '@/components/HeroSection';
 import { ServicesSection } from '@/components/ServicesSection';
 import { QuoteCalculator } from '@/components/QuoteCalculator';
 import { PortfolioSection } from '@/components/PortfolioSection';
+import { TestimonialsSection } from '@/components/TestimonialsSection';
 import { AboutSection } from '@/components/AboutSection';
 import { ContactSection } from '@/components/ContactSection';
 import { Footer } from '@/components/Footer';
@@ -16,6 +17,7 @@ export default function Home() {
         <ServicesSection />
         <QuoteCalculator />
         <PortfolioSection />
+        <TestimonialsSection />
         <AboutSection />
         <ContactSection />
       </main>
