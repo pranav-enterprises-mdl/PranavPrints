@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { Phone, Mail, MapPin, Send, Instagram, Loader2 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { WhatsAppButton } from '@/components/WhatsAppButton';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { Label } from '@/components/ui/label';
@@ -190,7 +191,7 @@ export function ContactSection() {
                   <div className="p-3 rounded-lg bg-primary/10 flex-shrink-0">
                     <Phone className="w-6 h-6 text-primary" />
                   </div>
-                  <div>
+                  <div className="flex-1">
                     <h3 className="font-semibold text-lg mb-2">Call Us</h3>
                     <a
                       href="tel:9740007147"
@@ -199,9 +200,17 @@ export function ContactSection() {
                     >
                       9740007147
                     </a>
-                    <p className="text-sm text-muted-foreground mt-1">
+                    <p className="text-sm text-muted-foreground mt-1 mb-3">
                       Mon - Sat: 9:00 AM - 8:00 PM
                     </p>
+                    <WhatsAppButton
+                      variant="outline"
+                      size="sm"
+                      text="Chat on WhatsApp"
+                      className="bg-[#25D366] hover:bg-[#20BA5A] text-white border-[#25D366]"
+                      prefilledMessage="Hi! I would like to discuss my printing requirements."
+                      testId="button-contact-whatsapp"
+                    />
                   </div>
                 </div>
               </CardContent>

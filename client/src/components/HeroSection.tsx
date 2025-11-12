@@ -1,5 +1,6 @@
 import { ArrowRight, Phone } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { WhatsAppButton } from '@/components/WhatsAppButton';
 import heroImage from '@assets/generated_images/Printing_press_hero_background_8bd0a291.png';
 
 export function HeroSection() {
@@ -59,6 +60,13 @@ export function HeroSection() {
 
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4">
+            <WhatsAppButton
+              size="lg"
+              text="Chat on WhatsApp"
+              className="shadow-lg shadow-primary/20 bg-[#25D366] hover:bg-[#20BA5A] border-[#25D366]"
+              prefilledMessage="Hi! I'm interested in getting a quote for printing services."
+              testId="button-hero-whatsapp"
+            />
             <Button
               size="lg"
               onClick={() => scrollToSection('contact')}

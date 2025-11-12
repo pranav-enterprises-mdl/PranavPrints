@@ -8,6 +8,7 @@ import { AboutSection } from '@/components/AboutSection';
 import { FileUploadPortal } from '@/components/FileUploadPortal';
 import { ContactSection } from '@/components/ContactSection';
 import { Footer } from '@/components/Footer';
+import { FloatingWhatsAppButton } from '@/components/FloatingWhatsAppButton';
 
 export default function Home() {
   return (
@@ -24,6 +25,7 @@ export default function Home() {
         <ContactSection />
       </main>
       <Footer />
+      <FloatingWhatsAppButton />
     </div>
   );
 }

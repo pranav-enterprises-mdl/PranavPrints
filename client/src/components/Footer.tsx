@@ -1,4 +1,4 @@
-import { Phone, Mail, MapPin, Instagram } from 'lucide-react';
+import { Phone, Mail, MapPin, Instagram, MessageCircle } from 'lucide-react';
 
 export function Footer() {
   const scrollToSection = (sectionId: string) => {
@@ -89,6 +89,18 @@ export function Footer() {
                   data-testid="link-footer-phone"
                 >
                   9740007147
+                </a>
+              </li>
+              <li className="flex items-start gap-3">
+                <MessageCircle className="w-4 h-4 text-[#25D366] flex-shrink-0 mt-0.5" />
+                <a
+                  href="https://wa.me/919740007147?text=Hi!%20I%20would%20like%20to%20know%20more%20about%20your%20printing%20services."
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-sm text-muted-foreground hover:text-[#25D366] transition-colors"
+                  data-testid="link-footer-whatsapp"
+                >
+                  WhatsApp Us
                 </a>
               </li>
               <li className="flex items-start gap-3">
