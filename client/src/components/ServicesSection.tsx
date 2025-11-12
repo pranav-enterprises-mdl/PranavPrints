@@ -1,6 +1,8 @@
-import { Printer, Activity, Layers, CheckCircle2, Clock, Award } from 'lucide-react';
+import { Printer, Activity, Layers, CheckCircle2, Clock, Award, ArrowRight } from 'lucide-react';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
+import { Button } from '@/components/ui/button';
+import { Link } from 'wouter';
 import flexImage from '@assets/generated_images/Flex_banner_installation_07b21df3.png';
 import printingImage from '@assets/generated_images/Printing_press_hero_background_8bd0a291.png';
 
@@ -18,6 +20,7 @@ export function ServicesSection() {
         'Custom stationery',
       ],
       badges: ['High Quality', 'Cost Effective', 'Fast Delivery'],
+      detailUrl: '/services/offset-digital',
     },
     {
       icon: <Layers className="w-12 h-12 text-accent" />,
@@ -31,6 +34,7 @@ export function ServicesSection() {
         'Vehicle graphics',
       ],
       badges: ['Weather Resistant', 'Vibrant Colors', 'Large Format'],
+      detailUrl: '/services/flex-printing',
     },
   ];
 
@@ -111,6 +115,15 @@ export function ServicesSection() {
                     <Award className="w-4 h-4 text-muted-foreground" />
                     <span className="text-sm text-muted-foreground">Premium quality</span>
                   </div>
+                </div>
+                
+                <div className="mt-6">
+                  <Link href={service.detailUrl}>
+                    <Button variant="outline" className="w-full" data-testid={`button-learn-more-${index}`}>
+                      Learn More & Pricing
+                      <ArrowRight className="w-4 h-4 ml-2" />
+                    </Button>
+                  </Link>
                 </div>
               </CardContent>
             </Card>
