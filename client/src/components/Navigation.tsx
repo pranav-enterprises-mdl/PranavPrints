@@ -56,6 +56,13 @@ export function Navigation() {
               Services
             </button>
             <button
+              onClick={() => scrollToSection('quote-calculator')}
+              className="text-base font-medium text-foreground/80 hover:text-primary transition-colors"
+              data-testid="link-quote"
+            >
+              Quote
+            </button>
+            <button
               onClick={() => scrollToSection('portfolio')}
               className="text-base font-medium text-foreground/80 hover:text-primary transition-colors"
               data-testid="link-portfolio"
@@ -78,7 +85,7 @@ export function Navigation() {
             </button>
             <Button
               variant="default"
-              onClick={() => scrollToSection('contact')}
+              onClick={() => scrollToSection('quote-calculator')}
               className="bg-primary"
               data-testid="button-get-quote"
             >
@@ -114,6 +121,13 @@ export function Navigation() {
               Services
             </button>
             <button
+              onClick={() => scrollToSection('quote-calculator')}
+              className="block w-full text-left py-3 px-4 rounded-lg hover-elevate active-elevate-2 text-base font-medium"
+              data-testid="link-quote-mobile"
+            >
+              Quote
+            </button>
+            <button
               onClick={() => scrollToSection('portfolio')}
               className="block w-full text-left py-3 px-4 rounded-lg hover-elevate active-elevate-2 text-base font-medium"
               data-testid="link-portfolio-mobile"
@@ -136,7 +150,7 @@ export function Navigation() {
             </button>
             <Button
               variant="default"
-              onClick={() => scrollToSection('contact')}
+              onClick={() => scrollToSection('quote-calculator')}
               className="w-full bg-primary"
               data-testid="button-get-quote-mobile"
             >
