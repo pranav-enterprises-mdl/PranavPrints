@@ -1,4 +1,5 @@
 import { Phone, Mail, MapPin, Instagram, MessageCircle } from 'lucide-react';
+import logo from '@assets/ChatGPT Image Nov 12, 2025, 02_50_01 PM_1762939224069.png';
 
 export function Footer() {
   const scrollToSection = (sectionId: string) => {
@@ -21,9 +22,16 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-12">
           {/* About */}
           <div className="space-y-4">
-            <h3 className="text-2xl font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
-              Pranav Enterprises
-            </h3>
+            <div className="flex items-center gap-3">
+              <img 
+                src={logo} 
+                alt="Pranav Enterprises Logo" 
+                className="h-12 w-auto"
+              />
+              <h3 className="text-xl font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
+                Pranav Enterprises
+              </h3>
+            </div>
             <p className="text-sm text-muted-foreground leading-relaxed">
               Professional offset digital and flex printing services in Mudhol, Karnataka. 
               Quality prints with fast turnaround times.
