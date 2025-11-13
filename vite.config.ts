@@ -4,6 +4,9 @@ import path from "path";
 import runtimeErrorOverlay from "@replit/vite-plugin-runtime-error-modal";
 
 export default defineConfig({
+  // base path so assets load correctly on GitHub Pages at /PranavPrints/
+  base: "/PranavPrints/",
+
   plugins: [
     react(),
     runtimeErrorOverlay(),
